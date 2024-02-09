@@ -1,0 +1,23 @@
+crawler.sapi:
+@console
+@event-driven
+var startingArea, passages, passageWidths, doors, beyondDoor, chamber, chamberExits, exitLocations, exitTypes, stairs
+
+startingArea = list("a 20x20 foot square, with a passage on each wall", "a 20x20 foot square, with a door on two walls and a passage in the third wall", "a 40x40 foot square with a door on three walls", "an 80x20 foot rectangle with rows of pillars down the middle, two passages leading from each long wall, doors on each short wall", "a 20x40 foot rectangle with a passage on each wall", "A circle with a 40 foot diameter and one passage at each cardinal direction", "a circle with a 40ft diameter, one passage in each cardinal direction, and a well in the middle of the room (can lead down to a lower level)", "a 20x20 foot square with a  door on two walls, a passage on the third wall and a secret door on the fourth wall", "a passage, 10 feet wide (a T intersection)", "A 10 foot wide passage leading to a four way intersection")
+
+function init()
+    consoleClear()
+    printMainMessage()
+    onEvent("keypress-s","startingArea")
+endfinit
+
+function startingarea()
+    printMainMessage()
+    println("You enter the dungeon. Before you is ")
+    print($("startingArea", random(1,10)))
+endfstartingarea
+
+function printMainMessage()
+    println("Key combinations: ")
+    println("s: show a starting area)
+endfprintMainMessage
